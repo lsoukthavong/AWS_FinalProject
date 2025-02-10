@@ -49,8 +49,7 @@
         const fetchCartItems = async () => {
             try {
                 console.log("Fetching cart items...");
-                const response = await fetch("https://vercel.com/lsoukthavongs-projects/ls-hosted-final-project
-/cart");
+                const response = await fetch("https://vercel.com/lsoukthavongs-projects/ls-hosted-final-project/cart");
                 if (!response.ok) {
                     throw new Error("Failed to fetch cart items");
                 }
@@ -120,8 +119,7 @@
 
         // Remove Item from Cart
         const removeFromCart = (itemId) => {
-            fetch(`https://vercel.com/lsoukthavongs-projects/ls-hosted-final-project
-/cart/${itemId}`, {
+            fetch(`https://vercel.com/lsoukthavongs-projects/ls-hosted-final-project/cart/${itemId}`, {
                 method: "DELETE",
                 headers: { "Content-Type": "application/json" }
             })
@@ -141,8 +139,7 @@
                 alert('Quantity must be greater than zero');
                 return;
             }
-            fetch(`https://vercel.com/lsoukthavongs-projects/ls-hosted-final-project
-/cart/${itemId}`, {
+            fetch(`https://vercel.com/lsoukthavongs-projects/ls-hosted-final-project/cart/${itemId}`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ quantity: newQuantity })

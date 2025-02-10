@@ -4,6 +4,8 @@ import express from 'express';
 import cors from 'cors';
 import http from 'http';
 import { WebSocketServer } from 'ws';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const app = express();
 
@@ -21,11 +23,11 @@ let con;
 app.post('/connect', function (req, res) {
   const { user, password } = req.body;
   con = mysql.createConnection({
-    host: 'greenwithivynursery.ctkk0uaye3uk.us-east-2.rds.amazonaws.com', // RDS endpoint
-    database: 'nursery', 
-    user: 'admin', // RDS master username
-    password: '$ecure1Pass123', // RDS master password
-    port: 3306, // Default MySQL port
+    host: process.env.DB_HOST,
+    database: process.env.DB_NAME,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    port: 3306,
   });
 
   con.connect(function (err) {
