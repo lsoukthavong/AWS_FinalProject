@@ -52,7 +52,8 @@
 // Fetch plants with optional search query
 const fetchPlants = async (query = '') => {
     try {
-        const response = await fetch(`http://localhost:3307/plants?search=${query}`);
+        const response = await fetch(`https://vercel.com/lsoukthavongs-projects/ls-hosted-final-project
+/plants?search=${query}`);
         if (!response.ok) {
             throw new Error("Failed to fetch Plants");
         }
@@ -111,7 +112,8 @@ const updatePlant = async (event) => {
     const token = localStorage.getItem('token');
 
     try {
-        const response = await fetch(`http://localhost:3307/plants/${plantId}/inventory`, {
+        const response = await fetch(`https://vercel.com/lsoukthavongs-projects/ls-hosted-final-project
+/plants/${plantId}/inventory`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

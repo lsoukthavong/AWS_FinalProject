@@ -80,7 +80,8 @@
         // Fetch plants with opt. search query
         const fetchPlants = async (query = '') => {
             try {
-                const response = await fetch(`http://localhost:3307/plants?search=${query}`);
+                const response = await fetch(`https://vercel.com/lsoukthavongs-projects/ls-hosted-final-project
+/plants?search=${query}`);
                 if (!response.ok) {
                     throw new Error("Failed to fetch Plants");
                 }
@@ -143,7 +144,8 @@
                 return;
             }
 
-            fetch("http://localhost:3307/cart", {
+            fetch("https://vercel.com/lsoukthavongs-projects/ls-hosted-final-project
+/cart", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ ...plant, quantity: 1 })
